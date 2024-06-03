@@ -1,0 +1,50 @@
+﻿@model HotelWeb.Models.Cerveza
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Cerveza</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.alcohol)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.alcohol)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Estilo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Estilo.nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.precio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.precio)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UrlImagen)
+        </dt>
+        <dd class="col-sm-10">
+            <img src="/@Model.UrlImagen" width="50%"/>
+            @Html.DisplayFor(model => model.UrlImagen)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
